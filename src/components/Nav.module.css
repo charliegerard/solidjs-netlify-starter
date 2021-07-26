@@ -1,0 +1,18 @@
+.Nav {
+  padding: 0 2em;
+}
+
+.Nav button {
+  display: block;
+  margin: 1em 0;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 1em;
+}
+
+.Nav button:hover {
+  font-weight: bold;
+}
