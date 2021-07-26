@@ -12,9 +12,9 @@ You can instantly clone this to your GitHub and deploy it by clicking this butto
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/charliegerard/solidjs-netlify-starter)
 
-Or, if you'd like to just use the CLI and not deploy just yet, you can use create-astro with this as a template:
+Or, if you'd like to just use the CLI and not deploy just yet, you can use `npx degit` with this as a template:
 
-npm init astro my-new-project --template cassidoo/astro-netlify-starter
+npx degit charliegerard/solidjs-netlify-starter my-app
 
 ## Commands
 
