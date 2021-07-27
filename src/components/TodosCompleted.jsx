@@ -15,7 +15,7 @@ const TodosCompleted = () => {
       <h1>Completed:</h1>
       <Show
         when={completedTodos().length}
-        fallback={() => <p>No completed items</p>}
+        fallback={() => <p>No completed items (yet!)</p>}
       >
         <For each={completedTodos()}>
           {(item) => {

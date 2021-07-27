@@ -1,4 +1,13 @@
 .App {
   display: grid;
   grid-template-columns: 200px 1fr;
+  background-color: rgb(244, 244, 244);
+  height: 100vh;
+  column-gap: 2em;
+}
+
+@media (max-width: 500px) {
+  .App {
+    grid-template-columns: 110px 1fr;
+  }
 }

@@ -1,10 +1,11 @@
 .Nav {
-  padding: 0 2em;
+  background-color: rgb(44, 45, 50);
 }
 
 .Nav button {
+  color: white;
   display: block;
-  margin: 1em 0;
+  margin: 1em;
   border: none;
   background: none;
   padding: 0;

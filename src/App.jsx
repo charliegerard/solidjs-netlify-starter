@@ -16,11 +16,17 @@ const AllTodos = () => {
 
 function App() {
   const [viewSelected, setViewSelected] = createSignal("all");
+  const defaultTodos = {
+    todos: [
+      { text: "Finish SolidJS demo" },
+      { text: "Write blog post about SolidJS" },
+    ],
+  };
 
   return (
-    <TodosProvider>
+    <TodosProvider todos={defaultTodos}>
       <div class={styles.App}>
-        <Nav setView={setViewSelected} />
+        <Nav setView={setViewSelected} view={viewSelected} />
         <Switch fallback={<AllTodos />}>
           <Match when={viewSelected() === "to do"}>
             <TodoList />

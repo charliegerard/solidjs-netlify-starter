@@ -1,2 +1,32 @@
 .TodoList {
+  margin-bottom: 3em;
+}
+
+.TodoList h1 {
+  margin-bottom: 2em;
+  font-size: 1.5em;
+}
+
+.TodoList input[type="text"] {
+  width: 80%;
+  padding: 1em;
+  font-size: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.TodoList button {
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: rgb(230, 230, 230);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.TodoList button:hover {
+  background-color: rgb(200, 200, 200);
 }

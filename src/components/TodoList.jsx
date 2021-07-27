@@ -13,18 +13,31 @@ const TodoList = () => {
     setIncompleteTodos(incomplete);
   });
 
+  const addTodoItem = (input) => {
+    if (!input.value.trim()) return;
+    addTodo(input.value);
+    input.value = "";
+  };
+
   return (
     <section class={styles.TodoList}>
-      <h1>To do list:</h1>
-      <input ref={input} type="text" />
+      <h1>ToDo List</h1>
+      <input
+        ref={input}
+        type="text"
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            addTodoItem(input);
+          }
+        }}
+      />
       <button
         onClick={() => {
-          if (!input.value.trim()) return;
-          addTodo(input.value);
-          input.value = "";
+          addTodoItem(input);
         }}
+        aria-label="add item"
       >
-        Add item
+        +
       </button>
       <ul>
         <For each={incompleteTodos()}>
