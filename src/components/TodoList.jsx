@@ -1,17 +1,9 @@
 import styles from "./TodoList.module.css";
 import { useTodos } from "../TodosProvider";
-import { createSignal, createEffect } from "solid-js";
 
 const TodoList = () => {
   let input;
-
   const [todos, { addTodo, toggleTodo }] = useTodos();
-  const [incompleteTodos, setIncompleteTodos] = createSignal([]);
-
-  createEffect(() => {
-    const incomplete = todos.todos.filter((todo) => !todo.completed);
-    setIncompleteTodos(incomplete);
-  });
 
   const addTodoItem = (input) => {
     if (!input.value.trim()) return;
@@ -22,9 +14,14 @@ const TodoList = () => {
   return (
     <section class={styles.TodoList}>
       <h1>ToDo List</h1>
+      <label for="todo-item" class="sr-only">
+        Todo item
+      </label>
       <input
         ref={input}
         type="text"
+        name="todo-item"
+        id="todo-item"
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             addTodoItem(input);
@@ -40,7 +37,7 @@ const TodoList = () => {
         +
       </button>
       <ul>
-        <For each={incompleteTodos()}>
+        <For each={todos.items.filter((t) => !t.completed)}>
           {(item) => (
             <li>
               <input

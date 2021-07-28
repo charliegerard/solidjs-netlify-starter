@@ -1,23 +1,17 @@
 import { useTodos } from "../TodosProvider";
-import { createSignal, createEffect, Show } from "solid-js";
+import { Show } from "solid-js";
 
 const TodosCompleted = () => {
   const [todos, { toggleTodo }] = useTodos();
-  const [completedTodos, setCompletedTodos] = createSignal([]);
-
-  createEffect(() => {
-    const completed = todos.todos.filter((todo) => todo.completed);
-    setCompletedTodos(completed);
-  });
 
   return (
     <section>
       <h1>Completed:</h1>
       <Show
-        when={completedTodos().length}
+        when={todos.items.filter((t) => t.completed).length}
         fallback={() => <p>No completed items (yet!)</p>}
       >
-        <For each={completedTodos()}>
+        <For each={todos.items.filter((t) => t.completed)}>
           {(item) => {
             return (
               <li>
