@@ -12,14 +12,10 @@ export function TodosProvider(props) {
         },
         toggleTodo(text) {
           setTodos(
-            produce((s) => {
-              s.items.map((item) => {
-                if (item.text === text) {
-                  item.completed = !item.completed;
-                }
-                return item;
-              });
-            })
+            "items",
+            (i) => i.text === text,
+            "completed",
+            (c) => !c
           );
         },
       },
